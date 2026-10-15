@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portofolio Fathan Rafa Anggana, mahasiswa Business Information Technology BINUS University: UI/UX design, data processing, dan operasional bisnis.">
+<meta name="theme-color" content="#121011">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Fathan Rafa Anggana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: dark editorial single page. Numbered chapters (01–06) in a 1120px column; each chapter = small mono label + large statement heading + content. Deliberately dark-only, red accent taken from the portrait background. */
+:root{
+  --bg:#121011; --surface:#1b1819; --raise:#242021; --line:#2e292a;
+  --fg:#f3eeec; --muted:#a69d9b; --dim:#766e6c;
+  --red:#e8494b; --red-ink:#ff7a77; --red-soft:rgba(232,73,75,.14); --on-red:#ffffff;
+  --paper:#ffffff;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Figtree","Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font:16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--red-ink);outline-offset:3px;border-radius:6px}
+.gut{padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.wrap{max-width:1120px;margin:0 auto}
+.skip{position:absolute;left:-999px;top:8px;background:var(--red);color:var(--on-red);padding:8px 14px;border-radius:8px;z-index:20}
+.skip:focus{left:16px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before{animation:none!important;transition:none!important}}
+
+/* ---------- nav ---------- */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(18,16,17,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:24px;padding-block:14px}
+.mark{font:800 1.2rem/1 var(--display);text-decoration:none;letter-spacing:-.02em}
+.mark span{color:var(--red)}
+nav ul{display:flex;gap:22px;list-style:none;margin:0 0 0 auto;padding:0;font:500 .74rem var(--mono);text-transform:uppercase;letter-spacing:.09em}
+nav ul a{text-decoration:none;color:var(--muted);transition:color .15s}
+nav ul a:hover{color:var(--fg)}
+.nav-cta{font:600 .85rem var(--body);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:8px 16px;transition:border-color .15s,background .15s}
+.nav-cta:hover{border-color:var(--red);background:var(--red-soft)}
+@media (max-width:860px){nav ul{display:none}.nav-cta{margin-left:auto}}
+
+/* ---------- hero ---------- */
+.hero{display:grid;grid-template-columns:1.35fr .85fr;gap:56px;align-items:end;padding-block:72px 48px}
+.hero > *{min-width:0}
+.eyebrow{font:500 .76rem var(--mono);letter-spacing:.11em;text-transform:uppercase;color:var(--red-ink);margin:0 0 20px;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--red)}
+h1{font:800 clamp(2.9rem,7.6vw,5.9rem)/.92 var(--display);letter-spacing:-.045em;margin:0 0 26px;text-wrap:balance}
+h1 .soft{color:var(--dim)}
+.lead{font-size:1.14rem;color:var(--muted);max-width:50ch;margin:0 0 30px}
+.lead b{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font:600 .95rem var(--body);text-decoration:none;border:1px solid var(--line);color:var(--fg);transition:transform .15s,background .15s,border-color .15s}
+.btn:hover{transform:translateY(-2px);border-color:var(--muted)}
+.btn.primary{background:var(--red);border-color:var(--red);color:var(--on-red)}
+.quick{display:flex;flex-wrap:wrap;gap:8px 20px;font:400 .84rem var(--mono);color:var(--muted)}
+.quick a{text-decoration:none;border-bottom:1px solid var(--line)}
+.quick a:hover{color:var(--fg);border-color:var(--red)}
+.portrait{margin:0;justify-self:end;width:100%;max-width:360px}
+.portrait img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 30%;border-radius:18px;background:var(--red)}
+.portrait figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:12px;font:400 .74rem var(--mono);color:var(--dim);letter-spacing:.04em}
+.portrait figcaption span:last-child{color:var(--muted)}
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;gap:32px;padding-block:40px 36px}
+  .portrait{justify-self:start;max-width:260px;order:-1}
+}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats div{padding:22px 20px 20px 0;min-width:0}
+.stats div + div{padding-left:20px;border-left:1px solid var(--line)}
+.stats b{display:block;font:700 clamp(1.9rem,4vw,2.7rem)/1 var(--display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.stats small{display:block;margin-top:8px;font:500 .72rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:640px){.stats{grid-template-columns:1fr 1fr}.stats div:nth-child(3){padding-left:0;border-left:0}.stats div:nth-child(n+3){border-top:1px solid var(--line)}}
+
+.ticker{overflow:hidden;border-bottom:1px solid var(--line);padding-block:16px;white-space:nowrap;font:700 clamp(1.1rem,2.4vw,1.5rem)/1 var(--display);letter-spacing:-.01em;color:var(--dim)}
+.ticker .track{display:inline-flex;gap:28px;padding-right:28px;animation:run 38s linear infinite}
+.ticker i{font-style:normal;color:var(--red)}
+@keyframes run{to{transform:translateX(-50%)}}
+
+/* ---------- chapters ---------- */
+section{padding-block:96px 24px;scroll-margin-top:64px}
+.head{display:grid;grid-template-columns:220px 1fr;gap:32px;margin-bottom:48px}
+.label{font:500 .76rem var(--mono);letter-spacing:.11em;text-transform:uppercase;color:var(--muted);padding-top:12px}
+.label b{color:var(--red-ink);font-weight:500}
+h2{font:700 clamp(2rem,4.6vw,3.4rem)/1.02 var(--display);letter-spacing:-.035em;margin:0;text-wrap:balance}
+h2 .soft{color:var(--dim)}
+.indent{margin-left:252px;min-width:0}
+@media (max-width:860px){.head{grid-template-columns:1fr;gap:10px;margin-bottom:32px}.label{padding-top:0}.indent{margin-left:0}section{padding-block:72px 16px}}
+
+.prose{font-size:1.1rem;max-width:62ch;margin:0 0 40px;color:var(--muted)}
+.prose b{color:var(--fg);font-weight:600}
+.interests{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.interests div{background:var(--bg);padding:24px 22px;min-width:0}
+.interests h3{font:700 1.2rem/1.2 var(--display);margin:0 0 8px;letter-spacing:-.01em}
+.interests p{margin:0;color:var(--muted);font-size:.95rem}
+.interests small{display:block;font:500 .7rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--red-ink);margin-bottom:14px}
+@media (max-width:760px){.interests{grid-template-columns:1fr}}
+
+/* ---------- projects ---------- */
+.project{border-top:1px solid var(--line);padding-block:40px 56px;display:grid;gap:28px}
+.project:first-of-type{border-top:0;padding-top:0}
+.p-top{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.p-top > *{min-width:0}
+.kicker{font:500 .74rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--red-ink);margin:0 0 10px}
+h3.p-title{font:700 clamp(1.6rem,3vw,2.2rem)/1.08 var(--display);letter-spacing:-.03em;margin:0 0 14px}
+.p-sum{color:var(--muted);margin:0 0 18px;font-size:1.03rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0}
+.tags li{font:500 .74rem var(--mono);padding:5px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.blocks{display:grid;gap:18px}
+.blk h4{font:500 .72rem var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--dim);margin:0 0 6px}
+.blk p,.blk ul{margin:0;color:var(--fg);font-size:.97rem}
+.blk ul{padding-left:18px}
+.blk li{margin-bottom:4px}
+.blk li::marker{color:var(--red)}
+.callout{background:var(--red-soft);border-radius:14px;padding:18px 20px}
+.callout h4{color:var(--red-ink)}
+.figures{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:4px}
+.figures div{background:var(--surface);border-radius:12px;padding:14px}
+.figures b{display:block;font:700 1.4rem/1 var(--display);font-variant-numeric:tabular-nums}
+.figures small{display:block;margin-top:6px;font-size:.8rem;color:var(--muted);line-height:1.35}
+@media (max-width:860px){.p-top{grid-template-columns:1fr;gap:24px}}
+
+.shots{display:grid;gap:12px}
+.shots.app{grid-template-columns:1.35fr 1fr 1.35fr}
+.shots.data{grid-template-columns:repeat(3,1fr)}
+.shot{margin:0;min-width:0}
+.shot button{display:block;width:100%;padding:0;border:0;border-radius:14px;overflow:hidden;cursor:zoom-in;background:var(--surface);position:relative}
+.shot img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.shot button:hover img{transform:scale(1.03)}
+.shot button::after{content:"Lihat ＋";position:absolute;right:10px;top:10px;font:500 .7rem var(--mono);background:rgba(18,16,17,.78);color:#fff;padding:5px 9px;border-radius:7px;opacity:0;transition:opacity .2s}
+.shot button:hover::after,.shot button:focus-visible::after{opacity:1}
+.shots.app .shot button{aspect-ratio:auto;height:clamp(220px,25vw,300px);flex:none}
+
+.shots.data .shot button{aspect-ratio:16/10;background:var(--paper)}
+.shots.data .shot img{object-fit:contain;padding:8px}
+.shot figcaption{margin-top:9px;font-size:.86rem;color:var(--muted);line-height:1.45}
+.shot figcaption b{display:block;color:var(--fg);font:500 .74rem var(--mono);letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.shots.data .shot.wide{grid-column:span 2;grid-row:span 2}
+.shot.wide,.shot.tall{display:flex;flex-direction:column}
+.shot.wide button,.shot.tall button{flex:1;min-height:0}
+.shots.data .shot.wide button{aspect-ratio:auto}
+@media (max-width:760px){.shots.app,.shots.data{grid-template-columns:1fr}.shots.data .shot.wide{grid-column:auto;grid-row:auto}.shots.data .shot.wide button{aspect-ratio:16/12;flex:none}.shots.app .shot button{height:auto;aspect-ratio:4/3}.shots.app .shot.tall button{aspect-ratio:3/4}}
+
+/* ---------- experience ---------- */
+.subhead{font:500 .74rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin:0 0 4px}
+.timeline{list-style:none;margin:0 0 56px;padding:0}
+.job{display:grid;grid-template-columns:190px 1fr;gap:28px;padding-block:26px;border-top:1px solid var(--line)}
+.job > *{min-width:0}
+.when{font:400 .82rem/1.5 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.when .now{display:inline-block;margin-top:6px;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--red-ink);border:1px solid var(--red);border-radius:999px;padding:2px 8px}
+.job h3{font:700 1.3rem/1.2 var(--display);letter-spacing:-.015em;margin:0}
+.job .org{color:var(--muted);margin:2px 0 10px;font-size:.95rem}
+.job ul{margin:0;padding-left:18px;color:var(--fg);font-size:.96rem}
+.job li{margin-bottom:4px}
+.job li::marker{color:var(--red)}
+@media (max-width:640px){.job{grid-template-columns:1fr;gap:6px}}
+
+/* ---------- education ---------- */
+.edu{display:grid;grid-template-columns:1.4fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.edu > div{background:var(--surface);padding:30px 28px;min-width:0}
+.edu h3{font:700 clamp(1.5rem,3vw,2rem)/1.1 var(--display);letter-spacing:-.025em;margin:0 0 6px}
+.edu p{margin:0;color:var(--muted)}
+.edu dl{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:0}
+.edu dt{font:500 .7rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:4px}
+.edu dd{margin:0;font-weight:600}
+.edu dd.big{font:700 2.2rem/1 var(--display);color:var(--red-ink);font-variant-numeric:tabular-nums}
+.edu dd.big small{font:400 .9rem var(--body);color:var(--muted)}
+@media (max-width:760px){.edu{grid-template-columns:1fr}}
+
+/* ---------- skills ---------- */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.sk{background:var(--surface);border-radius:16px;padding:22px 24px;min-width:0}
+.sk h3{font:500 .74rem var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.pills li{padding:7px 13px;border-radius:10px;background:var(--raise);font-weight:500;font-size:.93rem}
+@media (max-width:640px){.skills{grid-template-columns:1fr}}
+
+/* ---------- certificates ---------- */
+.certs{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.cert{margin:0;min-width:0;background:var(--surface);border-radius:16px;overflow:hidden}
+.cert button{display:block;width:100%;padding:0;border:0;cursor:zoom-in;background:var(--paper);aspect-ratio:16/10;overflow:hidden;position:relative}
+.cert img{display:block;width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s}
+.cert button:hover img{transform:scale(1.03)}
+.cert figcaption{padding:16px 18px 18px}
+.cert h3{font:700 1.08rem/1.3 var(--display);margin:0 0 4px}
+.cert p{margin:0;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font:400 .8rem var(--mono);color:var(--muted)}
+@media (max-width:640px){.certs{grid-template-columns:1fr}}
+
+/* ---------- contact ---------- */
+.contact{padding-block:110px 40px}
+.contact h2{font-size:clamp(2.4rem,7vw,5rem);line-height:.95;margin-bottom:24px}
+.contact h2 em{font-style:normal;color:var(--red)}
+.contact .prose{margin-bottom:36px}
+.clinks{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.cl{display:flex;flex-direction:column;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;text-decoration:none;min-width:0;transition:border-color .15s,transform .15s}
+a.cl:hover{border-color:var(--red);transform:translateY(-2px)}
+.cl small{font:500 .7rem var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.cl span{font-weight:600;font-size:1.02rem;overflow-wrap:anywhere}
+.cl .row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.copy{flex:none;font:500 .72rem var(--mono);background:var(--red);color:var(--on-red);border:0;border-radius:8px;padding:6px 10px;cursor:pointer}
+@media (max-width:760px){.clinks{grid-template-columns:1fr}}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-block:28px 40px;border-top:1px solid var(--line);font:400 .8rem var(--mono);color:var(--dim)}
+footer a{text-decoration:none;color:var(--muted)}
+footer a:hover{color:var(--fg)}
+
+/* ---------- lightbox ---------- */
+.lb{position:fixed;inset:0;z-index:50;background:rgba(10,9,9,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+  padding:calc(56px + env(safe-area-inset-top,0px)) max(16px, env(safe-area-inset-right, 0px)) calc(24px + env(safe-area-inset-bottom,0px)) max(16px, env(safe-area-inset-left, 0px))}
+.lb img{max-width:min(1200px,100%);max-height:calc(100% - 60px);object-fit:contain;border-radius:10px;background:var(--paper)}
+.lb p{margin:0;color:var(--fg);font-size:.92rem;text-align:center;max-width:70ch}
+.lb button{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:max(16px, env(safe-area-inset-right, 0px));background:var(--raise);color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font:500 .82rem var(--mono);cursor:pointer}
+</style>
+</head>
+<body>
+
+
+<a class="skip" href="#tentang">Langsung ke konten</a>
+
+<nav class="gut"><div class="wrap">
+  <a class="mark" href="#top">Fathan<span>.</span></a>
+  <ul>
+    <li><a href="#tentang">Tentang</a></li>
+    <li><a href="#proyek">Proyek</a></li>
+    <li><a href="#pengalaman">Pengalaman</a></li>
+    <li><a href="#keahlian">Keahlian</a></li>
+    <li><a href="#sertifikat">Sertifikat</a></li>
+  </ul>
+  <a class="nav-cta" href="#kontak">Hubungi ↗</a>
+</div></nav>
+
+<main id="top">
+  <div class="gut"><div class="wrap">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Mahasiswa Business Information Technology</p>
+        <h1>Fathan Rafa <span class="soft">Anggana</span></h1>
+        <p class="lead">Mahasiswa BINUS yang sudah <b>menjalankan dua bisnis sendiri</b>. Saya menggabungkan cara pandang bisnis dengan pengolahan data dan desain aplikasi.</p>
+        <div class="cta">
+          <a class="btn primary" href="#proyek">Lihat proyek saya ↓</a>
+          <a class="btn" href="#kontak">Hubungi saya</a>
+        </div>
+        <div class="quick">
+          <a href="#kontak">fathan.rafa29@gmail.com</a>
+          <a href="https://wa.me/6281319135367" target="_blank" rel="noopener">0813-1913-5367</a>
+          <a href="https://www.linkedin.com/in/fathan-rafa-656390288/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+      <figure class="portrait">
+        <img src="img/fathan.jpg" alt="Foto Fathan Rafa Anggana">
+        <figcaption><span>BINUS University</span><span>Semester 5</span></figcaption>
+      </figure>
+    </header>
+
+    <div class="stats" aria-label="Ringkasan">
+      <div><b>3,29</b><small>IPK saat ini</small></div>
+      <div><b>02</b><small>Bisnis dijalankan</small></div>
+      <div><b>05</b><small>Pengalaman kerja</small></div>
+      <div><b>04</b><small>Sertifikat</small></div>
+    </div>
+  </div></div>
+
+  <div class="ticker" aria-hidden="true"><div class="track">
+    <span>UI/UX Design</span><i>✳</i><span>Data Processing</span><i>✳</i><span>Business Operations</span><i>✳</i><span>Marketing &amp; Sales</span><i>✳</i><span>Microsoft Excel</span><i>✳</i>
+    <span>UI/UX Design</span><i>✳</i><span>Data Processing</span><i>✳</i><span>Business Operations</span><i>✳</i><span>Marketing &amp; Sales</span><i>✳</i><span>Microsoft Excel</span><i>✳</i>
+  </div></div>
+
+  <div class="gut"><div class="wrap">
+
+    <!-- 01 TENTANG -->
+    <section id="tentang">
+      <div class="head"><span class="label"><b>01</b> / Tentang Saya</span><h2>Paham bisnis, <span class="soft">nyaman dengan data.</span></h2></div>
+      <div class="indent">
+        <p class="prose">Mahasiswa aktif <b>Business Information Technology di BINUS University</b> dengan pengalaman di marketing, sales, pengolahan data, dan operasional bisnis. Komunikatif, mudah beradaptasi, dan terbiasa bekerja mandiri maupun dalam tim dengan target dan deadline.</p>
+        <p class="subhead" style="margin-bottom:14px">Bidang yang ingin saya kembangkan</p>
+        <div class="interests">
+          <div><small>Desain</small><h3>UI/UX Design</h3><p>Merancang aplikasi yang mudah dipakai dan sesuai karakter brand, seperti aplikasi Anggana 61.</p></div>
+          <div><small>Data</small><h3>Data Analytics</h3><p>Membersihkan, mengolah, dan menyajikan data menjadi informasi yang siap dipakai untuk keputusan.</p></div>
+          <div><small>Bisnis</small><h3>Business Operations</h3><p>Mengelola stok, keuangan, tim, dan promosi dari pengalaman menjalankan bisnis sendiri.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 PROYEK -->
+    <section id="proyek">
+      <div class="head"><span class="label"><b>02</b> / Proyek Pilihan</span><h2>Dari ide ke prototipe. <span class="soft">Dari data ke keputusan.</span></h2></div>
+
+      <article class="project">
+        <div class="p-top">
+          <div>
+            <p class="kicker">UI/UX Design · Untuk bisnis sendiri</p>
+            <h3 class="p-title">Anggana 61: Coffee Shop App</h3>
+            <p class="p-sum">Desain aplikasi mobile untuk Anggana 61, coffee shop di Grand Wisata yang saya kelola sendiri. Pelanggan bisa memesan menu, mengumpulkan poin member, dan mendapatkan promo dari satu aplikasi.</p>
+            <ul class="tags"><li>Figma</li><li>Mobile App</li><li>Loyalty Program</li></ul>
+          </div>
+          <div class="blocks">
+            <div class="blk"><h4>Yang dirancang</h4>
+              <ul>
+                <li>Login dengan nomor HP atau email, plus akses cepat lewat Google dan Apple.</li>
+                <li>Beranda dengan kartu member, poin, progres level, banner promo, dan rekomendasi menu.</li>
+                <li>Halaman menu dengan pencarian, filter kategori, rating, dan tombol favorit.</li>
+              </ul>
+            </div>
+            <div class="blk callout"><h4>Pendekatan desain</h4><p>Palet krem, cokelat, dan emas untuk suasana hangat khas kedai kopi, dipadukan dengan tipografi monospace yang memberi karakter modern.</p></div>
+          </div>
+        </div>
+        <div class="shots app">
+          <figure class="shot"><button type="button" data-zoom="img/anggana-home.jpg" data-cap="Beranda: kartu member, poin, promo, dan rekomendasi menu."><img src="img/anggana-home.jpg" alt="Mockup beranda aplikasi Anggana 61" loading="lazy"></button><figcaption><b>Beranda</b>Kartu member, poin, dan promo.</figcaption></figure>
+          <figure class="shot tall"><button type="button" data-zoom="img/anggana-login.jpg" data-cap="Login: nomor HP atau email, serta Google dan Apple."><img src="img/anggana-login.jpg" alt="Mockup halaman login Anggana 61" loading="lazy"></button><figcaption><b>Login</b>HP, email, Google, Apple.</figcaption></figure>
+          <figure class="shot"><button type="button" data-zoom="img/anggana-menu.jpg" data-cap="Menu: pencarian, filter kategori, dan favorit."><img src="img/anggana-menu.jpg" alt="Mockup halaman menu Anggana 61" loading="lazy"></button><figcaption><b>Menu</b>Pencarian, filter, dan favorit.</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="p-top">
+          <div>
+            <p class="kicker">Data Analysis · Proyek Kelompok BINUS · 2025/2026</p>
+            <h3 class="p-title">Hotel Booking System: Data Cleaning &amp; Dashboard</h3>
+            <p class="p-sum">Mengolah data reservasi hotel dari lima tabel yang tidak konsisten (Bookings, Guests, Rooms, Payments, GuestServices) menjadi data yang rapi, terhubung, dan siap dianalisis lewat dashboard interaktif.</p>
+            <ul class="tags"><li>Microsoft Excel</li><li>Power Pivot</li><li>DAX</li><li>What-If Analysis</li></ul>
+          </div>
+          <div class="blocks">
+            <div class="blk"><h4>Yang dikerjakan</h4>
+              <ul>
+                <li>Menyeragamkan teks dan format tanggal dengan TRIM, PROPER, IF, IFERROR, VLOOKUP, dan INDEX-MATCH.</li>
+                <li>Menghubungkan lima tabel dalam Power Pivot Data Model, dengan measure Total Revenue dan Average Payment.</li>
+                <li>Simulasi What-If: pendapatan naik dari Rp 442 juta (okupansi 70%) menjadi Rp 631,7 juta (okupansi 100%).</li>
+              </ul>
+            </div>
+            <div class="blk callout"><h4>Temuan dari 240 booking</h4>
+              <div class="figures">
+                <div><b>89</b><small>Confirmed</small></div>
+                <div><b>67</b><small>Cancelled</small></div>
+                <div><b>30%</b><small>Bayar via Bank Transfer</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="shots data">
+          <figure class="shot wide"><button type="button" data-zoom="img/hotel/6-dashboard.png" data-cap="Dashboard akhir: total pendapatan, jumlah booking, tren bulanan, dan metode pembayaran dalam satu halaman."><img src="img/hotel/6-dashboard.png" alt="Dashboard Hotel Booking di Excel" loading="lazy"></button><figcaption><b>Dashboard</b>Ringkasan pendapatan, booking, dan pembayaran dalam satu halaman.</figcaption></figure>
+          <figure class="shot"><button type="button" data-zoom="img/hotel/1-data-cleaning.png" data-cap="Data cleaning: status booking diseragamkan dengan formula, lalu diberi warna otomatis lewat Conditional Formatting."><img src="img/hotel/1-data-cleaning.png" alt="Proses data cleaning di Excel" loading="lazy"></button><figcaption><b>Data Cleaning</b>Status diseragamkan dan diberi warna otomatis.</figcaption></figure>
+          <figure class="shot"><button type="button" data-zoom="img/hotel/2-data-model.png" data-cap="Data model: lima tabel dihubungkan di Power Pivot, dengan Bookings sebagai pusat transaksi."><img src="img/hotel/2-data-model.png" alt="Relasi tabel di Power Pivot" loading="lazy"></button><figcaption><b>Data Model</b>Lima tabel terhubung di Power Pivot.</figcaption></figure>
+          <figure class="shot"><button type="button" data-zoom="img/hotel/3-booking-status.png" data-cap="Status booking: 89 Confirmed, 67 Cancelled, 32 No Show, 27 Checked-In, 25 Pending."><img src="img/hotel/3-booking-status.png" alt="Grafik jumlah booking per status" loading="lazy"></button><figcaption><b>Status Booking</b>67 dari 240 booking dibatalkan.</figcaption></figure>
+          <figure class="shot"><button type="button" data-zoom="img/hotel/4-metode-pembayaran.png" data-cap="Metode pembayaran: Bank Transfer paling sering dipakai (30%), disusul Cash (23%)."><img src="img/hotel/4-metode-pembayaran.png" alt="Grafik distribusi metode pembayaran" loading="lazy"></button><figcaption><b>Metode Pembayaran</b>Bank Transfer 30%, Cash 23%.</figcaption></figure>
+          <figure class="shot"><button type="button" data-zoom="img/hotel/5-what-if.png" data-cap="What-If Analysis: estimasi pendapatan pada tingkat okupansi 50% sampai 100%."><img src="img/hotel/5-what-if.png" alt="Tabel simulasi What-If okupansi" loading="lazy"></button><figcaption><b>What-If Analysis</b>Pendapatan pada okupansi 50–100%.</figcaption></figure>
+        </div>
+      </article>
+    </section>
+
+    <!-- 03 PENGALAMAN -->
+    <section id="pengalaman">
+      <div class="head"><span class="label"><b>03</b> / Pengalaman</span><h2>Belajar dari <span class="soft">dunia nyata.</span></h2></div>
+      <div class="indent">
+        <p class="subhead">Pengalaman kerja</p>
+        <ol class="timeline">
+          <li class="job"><div class="when">2024 – sekarang<br><span class="now">Aktif</span></div><div><h3>Business Owner</h3><p class="org">Anggana 61 Coffee &amp; Resto · Grand Wisata, Bekasi</p>
+            <ul><li>Mengelola stok bahan baku, pencatatan transaksi, dan keuangan operasional.</li><li>Mengatur pembagian tugas karyawan, termasuk kasir dan operasional.</li><li>Menyusun strategi promosi untuk meningkatkan awareness dan penjualan.</li></ul></div></li>
+          <li class="job"><div class="when">2025 – sekarang<br><span class="now">Aktif</span></div><div><h3>Business Owner</h3><p class="org">Anggana Gaming · Rental PlayStation</p>
+            <ul><li>Menjalankan operasional dari sistem penyewaan, jadwal, hingga perawatan unit.</li><li>Mengelola pemasukan, pengeluaran, dan promosi untuk menambah pelanggan.</li></ul></div></li>
+          <li class="job"><div class="when">Jun – Agu 2026</div><div><h3>Data Processing</h3><p class="org">Kementerian Perdagangan · P2IE</p>
+            <ul><li>Mengolah dan menganalisis data dengan Microsoft Excel untuk kebutuhan pelaporan unit.</li><li>Mengambil data dari Microsoft Access, lalu melakukan cleaning, filtering, dan validasi.</li><li>Menggabungkan data dari berbagai sumber menjadi informasi yang terstruktur.</li></ul></div></li>
+          <li class="job"><div class="when">Agu 2025 – Agu 2026</div><div><h3>Supervisor Education Counselor</h3><p class="org">BINUS Bekasi</p>
+            <ul><li>Mengawasi dan membimbing tim Education Counselor untuk mencapai target student recruitment.</li><li>Mengoordinasikan promosi, konsultasi, dan follow-up calon mahasiswa, lalu melaporkan hasil evaluasi tim.</li></ul></div></li>
+          <li class="job"><div class="when">Jan – Jul 2025</div><div><h3>Education Counselor</h3><p class="org">BINUS Bekasi</p>
+            <ul><li>Memberikan konsultasi program studi dan pendaftaran kepada calon mahasiswa dan orang tua.</li><li>Melakukan follow-up untuk mendukung proses pendaftaran.</li></ul></div></li>
+        </ol>
+
+        <p class="subhead">Organisasi &amp; kegiatan</p>
+        <ol class="timeline">
+          <li class="job"><div class="when">Sep 2026</div><div><h3>Anggota KPPS</h3><p class="org">Desa Lambangsari</p>
+            <ul><li>Menjalankan pemungutan dan penghitungan suara sesuai prosedur, termasuk verifikasi dan pencatatan administrasi pemilih.</li></ul></div></li>
+          <li class="job"><div class="when">2023</div><div><h3>Wakil Ketua Panitia</h3><p class="org">Concentration 2023</p>
+            <ul><li>Mengoordinasikan 4 divisi: External Fund, Internal Fund, Marketing, dan Consumption.</li></ul></div></li>
+          <li class="job"><div class="when">2022 – 2023</div><div><h3>Anggota Tim Editorial</h3><p class="org">Organisasi Jurnalistik</p>
+            <ul><li>Riset, menulis, dan menyunting konten jurnalistik sebelum dipublikasikan.</li></ul></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 04 PENDIDIKAN -->
+    <section id="pendidikan">
+      <div class="head"><span class="label"><b>04</b> / Pendidikan</span><h2>BINUS University.</h2></div>
+      <div class="indent">
+        <div class="edu">
+          <div><h3>Business Information Technology</h3><p>Universitas Bina Nusantara · Agustus 2024 – sekarang</p></div>
+          <div><dl>
+            <div><dt>IPK</dt><dd class="big">3,29 <small>/ 4,00</small></dd></div>
+            <div><dt>Status</dt><dd>Semester 5<br>Mahasiswa aktif</dd></div>
+          </dl></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 KEAHLIAN -->
+    <section id="keahlian">
+      <div class="head"><span class="label"><b>05</b> / Keahlian &amp; Tools</span><h2>Yang saya bawa <span class="soft">ke dalam tim.</span></h2></div>
+      <div class="skills indent">
+        <div class="sk"><h3>Data &amp; Programming</h3><ul class="pills"><li>Microsoft Excel</li><li>Microsoft Access</li><li>MySQL</li><li>Python</li></ul></div>
+        <div class="sk"><h3>Desain</h3><ul class="pills"><li>Figma</li><li>Canva</li><li>UI/UX Design</li></ul></div>
+        <div class="sk"><h3>Produktivitas</h3><ul class="pills"><li>Word</li><li>PowerPoint</li><li>Google Docs</li><li>Google Sheets</li><li>Google Drive</li></ul></div>
+        <div class="sk"><h3>Soft Skill</h3><ul class="pills"><li>Problem Solving</li><li>Leadership</li><li>Kerja Tim</li><li>Komunikasi Efektif</li><li>Business Perspective</li><li>Manajemen Waktu</li></ul></div>
+        <div class="sk"><h3>Bahasa</h3><ul class="pills"><li>Indonesia</li><li>Inggris</li></ul></div>
+      </div>
+    </section>
+
+    <!-- 06 SERTIFIKAT -->
+    <section id="sertifikat">
+      <div class="head"><span class="label"><b>06</b> / Sertifikat</span><h2>Terus belajar <span class="soft">di luar kelas.</span></h2></div>
+      <div class="certs indent">
+        <figure class="cert"><button type="button" data-zoom="img/cert/myskill-credit.jpg" data-cap="Credit Analysis · MySkill · 29 September 2026"><img src="img/cert/myskill-credit.jpg" alt="Sertifikat Credit Analysis dari MySkill" loading="lazy"></button>
+          <figcaption><h3>Credit Analysis</h3><p><span>MySkill · Financial Statement Analysis</span><span>Sep 2026</span></p></figcaption></figure>
+        <figure class="cert"><button type="button" data-zoom="img/cert/dqlab-python.jpg" data-cap="Guide to Learn Python with AI · DQLab · 30 Juli 2026"><img src="img/cert/dqlab-python.jpg" alt="Sertifikat Python with AI dari DQLab" loading="lazy"></button>
+          <figcaption><h3>Guide to Learn Python with AI</h3><p><span>DQLab</span><span>Jul 2026</span></p></figcaption></figure>
+        <figure class="cert"><button type="button" data-zoom="img/cert/intro-data-analyst.jpg" data-cap="Free Class: Intro to Data Analyst · Coding Studio · 29 Juli 2025"><img src="img/cert/intro-data-analyst.jpg" alt="Sertifikat Intro to Data Analyst dari Coding Studio" loading="lazy"></button>
+          <figcaption><h3>Intro to Data Analyst</h3><p><span>Coding Studio</span><span>Jul 2025</span></p></figcaption></figure>
+        <figure class="cert"><button type="button" data-zoom="img/cert/azure-ai.jpg" data-cap="Self-Paced Azure AI Basic Fundamental · elevAIte (Microsoft, Komdigi, GreatNusa) · 26 Mei 2025"><img src="img/cert/azure-ai.jpg" alt="Sertifikat Azure AI Basic Fundamental" loading="lazy"></button>
+          <figcaption><h3>Azure AI Basic Fundamental</h3><p><span>elevAIte · Microsoft &amp; Komdigi</span><span>Mei 2025</span></p></figcaption></figure>
+      </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section id="kontak" class="contact">
+      <p class="eyebrow">Kontak</p>
+      <h2>Siap belajar.<br><em>Siap berkontribusi.</em></h2>
+      <p class="prose">Terbuka untuk kesempatan magang, proyek, dan kolaborasi di bidang data, UI/UX, maupun operasional bisnis.</p>
+      <div class="clinks">
+        <div class="cl"><small>Email</small><div class="row"><span id="email">fathan.rafa29@gmail.com</span><button class="copy" id="copy-email" type="button">Salin</button></div></div>
+        <a class="cl" href="https://wa.me/6281319135367" target="_blank" rel="noopener"><small>WhatsApp ↗</small><span>0813-1913-5367</span></a>
+        <a class="cl" href="https://www.linkedin.com/in/fathan-rafa-656390288/" target="_blank" rel="noopener"><small>LinkedIn ↗</small><span>Fathan Rafa</span></a>
+      </div>
+    </section>
+  </div></div>
+</main>
+
+<footer class="gut"><div class="wrap"><span>© 2026 Fathan Rafa Anggana</span><a href="#top">Kembali ke atas ↑</a></div></footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Pratinjau gambar">
+  <button type="button" id="lb-close">Tutup ✕</button>
+  <img id="lb-img" alt="">
+  <p id="lb-cap"></p>
+</div>
+
+<script>
+(function(){
+  var lb=document.getElementById('lb'),img=document.getElementById('lb-img'),cap=document.getElementById('lb-cap'),close=document.getElementById('lb-close'),last=null;
+  document.querySelectorAll('[data-zoom]').forEach(function(b){
+    b.addEventListener('click',function(){
+      last=b;img.src=b.dataset.zoom;img.alt=b.querySelector('img').alt;cap.textContent=b.dataset.cap||'';
+      lb.hidden=false;document.body.style.overflow='hidden';close.focus();
+    });
+  });
+  function hide(){lb.hidden=true;document.body.style.overflow='';if(last)last.focus();}
+  close.addEventListener('click',hide);
+  lb.addEventListener('click',function(e){if(e.target===lb)hide();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)hide();});
+
+  var btn=document.getElementById('copy-email'),em=document.getElementById('email');
+  btn.addEventListener('click',function(){
+    function done(){btn.textContent='Tersalin';setTimeout(function(){btn.textContent='Salin'},1600);}
+    function sel(){var r=document.createRange();r.selectNodeContents(em);var s=getSelection();s.removeAllRanges();s.addRange(r);}
+    try{navigator.clipboard.writeText(em.textContent).then(done,sel);}catch(e){sel();}
+  });
+})();
+</script>
+
+</body>
+</html>
