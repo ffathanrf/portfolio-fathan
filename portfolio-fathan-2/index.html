@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portofolio Fathan Rafa Anggana, mahasiswa Business Information Technology BINUS University: data, sistem informasi, UI/UX, dan operasional bisnis.">
+<meta name="theme-color" content="#f6f3ef">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Fathan Rafa Anggana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: magazine-cover hero (giant name behind a cut-out portrait on the portrait's own red), then one continuous column of sections on warm paper. No split screen. Deliberately a single light look. */
+:root{
+  --red:#d63336; --red-deep:#b0262a; --on-red:#ffffff;
+  --paper:#f6f3ef; --card:#ffffff; --ink:#191716; --muted:#6b6360; --line:#e5dfda; --tint:#fbe9e8; --accent:#c92f33;
+  --display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --body:"Figtree","Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --gut-l:max(20px, env(safe-area-inset-left, 0px)); --gut-r:max(20px, env(safe-area-inset-right, 0px));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:6px}
+.hero :focus-visible,.topnav.top :focus-visible,.contact :focus-visible{outline-color:#fff}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+.wrap{max-width:1200px;margin:0 auto;padding-left:var(--gut-l);padding-right:var(--gut-r)}
+
+/* ============ NAV ============ */
+.topnav{position:sticky;top:0;z-index:30;background:rgba(246,243,239,.9);backdrop-filter:blur(12px);transition:box-shadow .3s}
+.topnav.solid{box-shadow:0 1px 0 var(--line)}
+.topnav .wrap{display:flex;align-items:center;gap:24px;padding-top:calc(16px + env(safe-area-inset-top,0px));padding-bottom:16px}
+.logo{font:800 1.05rem/1 var(--display);letter-spacing:-.01em;text-decoration:none}
+.logo span{color:var(--red)}
+.links{display:flex;gap:2px;list-style:none;margin:0 0 0 auto;padding:0}
+.links a{display:block;text-decoration:none;font:500 .88rem var(--body);padding:8px 12px;border-radius:999px;color:var(--muted);transition:color .2s,background .2s}
+.links a:hover{color:var(--ink)}
+.links a.on{color:var(--ink);background:#ebe4df}
+.cta-nav{font:600 .88rem var(--body);text-decoration:none;padding:9px 18px;border-radius:999px;background:var(--ink);color:#fff;transition:transform .2s}
+.cta-nav:hover{transform:translateY(-2px)}
+@media (max-width:900px){.links{display:none}.cta-nav{margin-left:auto}}
+
+/* ============ HERO ============ */
+.hero{padding-block:56px 72px}
+.hero-grid{display:grid;grid-template-columns:1.25fr .85fr;gap:64px;align-items:center}
+.hero-grid > *{min-width:0}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px 6px 10px;font:500 .82rem var(--body);color:var(--muted);margin-bottom:26px}
+.badge i{width:8px;height:8px;border-radius:50%;background:#2fb36b;box-shadow:0 0 0 3px rgba(47,179,107,.18)}
+.hero h1{font:800 clamp(2.8rem,6vw,4.8rem)/1 var(--display);letter-spacing:-.04em;margin:0 0 20px;text-wrap:balance}
+.hero h1 span{color:var(--red)}
+.hero .sub{font-size:1.15rem;color:var(--muted);max-width:46ch;margin:0 0 32px}
+.hero .sub b{color:var(--ink);font-weight:600}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font:600 .94rem var(--body);text-decoration:none;transition:transform .2s,background .2s,border-color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.p{background:var(--red);color:#fff}
+.btn.s{border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.btn.s:hover{border-color:var(--ink)}
+.photo{position:relative;justify-self:end;width:100%;max-width:380px;margin:0}
+.photo img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;border-radius:28px;background:var(--red)}
+.photo figcaption{position:absolute;left:-28px;bottom:28px;background:var(--card);border-radius:16px;padding:12px 16px;box-shadow:0 14px 34px -12px rgba(40,20,20,.28);display:grid;gap:2px}
+.photo figcaption small{font:500 .7rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.photo figcaption b{font:700 .95rem var(--body)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:64px;border-top:1px solid var(--line)}
+.stats div{padding:22px 0 0;min-width:0}
+.stats div + div{padding-left:24px;border-left:1px solid var(--line)}
+.stats b{display:block;font:800 2.2rem/1 var(--display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.stats small{display:block;margin-top:8px;color:var(--muted);font-size:.86rem}
+@media (max-width:860px){
+  .hero{padding-block:32px 48px}
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .photo{justify-self:start;max-width:300px;order:-1}
+  .photo figcaption{left:auto;right:-12px}
+  .stats{grid-template-columns:1fr 1fr;margin-top:44px}
+  .stats div:nth-child(3){padding-left:0;border-left:0}
+  .stats div:nth-child(n+3){margin-top:20px}
+}
+
+/* ============ SECTIONS ============ */
+section{padding-block:110px 10px;scroll-margin-top:70px}
+.shead{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;margin-bottom:40px}
+.shead > *{min-width:0}
+.eyebrow{display:flex;align-items:center;gap:10px;font:500 .74rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+.eyebrow::before{content:"";width:18px;height:2px;background:var(--red)}
+h2.t{font:800 clamp(2rem,4vw,3rem)/1.05 var(--display);letter-spacing:-.035em;margin:0;text-wrap:balance}
+h2.t em{font-style:normal;color:var(--muted)}
+.shead p{margin:0;max-width:34ch;color:var(--muted);font-size:.95rem}
+.shead.stack{grid-template-columns:1fr;gap:20px}
+@media (max-width:760px){.shead{grid-template-columns:1fr}section{padding-top:80px}}
+
+/* about */
+.about{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:start}
+.about > *{min-width:0}
+.statement{font:600 clamp(1.5rem,2.6vw,2.15rem)/1.3 var(--display);letter-spacing:-.02em;margin:0 0 22px;text-wrap:pretty}
+.statement mark{background:linear-gradient(transparent 60%,rgba(214,51,54,.28) 60%);color:inherit;padding:0 2px}
+.lead{color:var(--muted);margin:0;max-width:60ch}
+.focus{display:grid;gap:12px}
+.focus > div{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;transition:transform .25s,border-color .25s}
+.focus > div:hover{transform:translateX(4px);border-color:var(--red)}
+.focus .ic{width:44px;height:44px;border-radius:12px;background:var(--tint);color:var(--accent);display:grid;place-items:center}
+.focus .ic svg{width:22px;height:22px}
+.focus h3{font:700 1.05rem/1.2 var(--display);margin:2px 0 4px}
+.focus p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.5}
+@media (max-width:860px){.about{grid-template-columns:1fr;gap:28px}}
+
+/* experience */
+.now{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;background:var(--ink);color:#fff;border-radius:24px;padding:26px 28px;margin-bottom:28px;position:relative;overflow:hidden}
+.now::after{content:none}
+.now > *{position:relative;z-index:1;min-width:0}
+.now .tag{font:500 .68rem var(--mono);letter-spacing:.1em;text-transform:uppercase;background:#7dffa8;color:#0d3b1d;border-radius:999px;padding:5px 10px;white-space:nowrap}
+.now h3{font:800 1.35rem/1.15 var(--display);margin:0 0 4px}
+.now p{margin:0;color:rgba(255,255,255,.75);font-size:.94rem}
+.now time{font:500 .8rem var(--mono);color:#fff;white-space:nowrap}
+@media (max-width:700px){.now{grid-template-columns:1fr;gap:10px}.now::after{display:none}.now .tag{justify-self:start}}
+.tabs{display:inline-flex;background:#ebe4df;border-radius:999px;padding:4px;margin-bottom:18px}
+.tabs button{border:0;background:none;font:600 .85rem var(--body);padding:9px 18px;border-radius:999px;cursor:pointer;color:var(--muted)}
+.tabs button[aria-selected="true"]{background:var(--card);color:var(--ink);box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.jobs{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.job{display:grid;grid-template-columns:170px 1fr 1.2fr;gap:28px;padding:26px 8px;border-bottom:1px solid var(--line);transition:background .25s,padding .25s}
+.job:hover{background:var(--card);padding-left:20px;padding-right:20px}
+.job > *{min-width:0}
+.job time{font:400 .8rem/1.5 var(--mono);color:var(--muted);padding-top:3px}
+.job time .live{display:inline-flex;align-items:center;gap:6px;margin-top:6px;color:var(--accent);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase}
+.job time .live::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.job h3{font:800 1.18rem/1.2 var(--display);margin:0}
+.job .org{color:var(--muted);font-size:.9rem;margin:4px 0 10px}
+.job ul{margin:0;padding-left:18px;font-size:.93rem}
+.job li{margin-bottom:4px}
+.job li::marker{color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips i{font-style:normal;font:500 .7rem var(--mono);background:var(--tint);color:var(--accent);border-radius:999px;padding:3px 10px}
+@media (max-width:900px){.job{grid-template-columns:140px 1fr}.job ul{grid-column:2}}
+@media (max-width:600px){.job{grid-template-columns:1fr;gap:6px}.job ul{grid-column:auto}}
+
+/* projects */
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filters button{font:500 .82rem var(--body);border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 15px;cursor:pointer;transition:all .2s}
+.filters button small{font-family:var(--mono);color:var(--muted);margin-left:4px}
+.filters button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.filters button[aria-pressed="true"] small{color:rgba(255,255,255,.6)}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;min-width:0;transition:box-shadow .3s,transform .3s}
+.pcard:hover{box-shadow:0 22px 44px -22px rgba(80,20,20,.3);transform:translateY(-4px)}
+.pcard .pimg{position:relative;overflow:hidden;background:#efebe8;aspect-ratio:16/10;cursor:pointer}
+.pcard .pimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.pcard .pimg.fit img{object-fit:contain;padding:14px;background:#fff}
+.pcard:hover .pimg img{transform:scale(1.04)}
+.pcard .cat{position:absolute;left:14px;top:14px;font:500 .68rem var(--mono);letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:#fff;border-radius:999px;padding:5px 10px;z-index:2}
+.pcard .pbody{padding:24px 24px 22px;display:flex;flex-direction:column;flex:1;min-width:0}
+.pcard .meta{font:500 .7rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+.pcard h3{font:800 1.4rem/1.12 var(--display);font-stretch:104%;letter-spacing:-.02em;margin:0 0 10px}
+.pcard p{margin:0 0 18px;color:var(--muted);font-size:.94rem}
+.nums{display:flex;gap:18px;padding-top:16px;border-top:1px dashed var(--line);margin-top:auto}
+.nums div{min-width:0}
+.nums div b{display:block;font:800 1.45rem/1 var(--display);font-variant-numeric:tabular-nums}
+.nums div small{font-size:.74rem;color:var(--muted);line-height:1.3;display:block;margin-top:4px}
+.open{margin-top:18px;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font:600 .9rem var(--body);background:none;border:0;padding:0;cursor:pointer;color:var(--ink)}
+.open span{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;transition:transform .25s}
+.open:hover span{transform:translateX(4px)}
+.tcover{position:absolute;inset:0;background:var(--ink);color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:22px;overflow:hidden}
+.tcover::before{content:none;position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:24px 24px;-webkit-mask-image:radial-gradient(circle at 100% 0,#000,transparent 75%);mask-image:radial-gradient(circle at 100% 0,#000,transparent 75%)}
+.tcover.red{background:var(--red)}
+.tcover > *{position:relative}
+.tcover b{font:800 clamp(3rem,5.5vw,4.4rem)/.95 var(--display);letter-spacing:-.04em;transition:transform .6s;transform-origin:left bottom}
+.pcard:hover .tcover b{transform:scale(1.04)}
+.tcover small{font:500 .8rem var(--mono);letter-spacing:.06em;text-transform:uppercase;opacity:.8;margin-top:8px;max-width:26ch}
+@media (max-width:820px){.projects{grid-template-columns:1fr}}
+
+/* education + skills */
+.edu-skills{display:grid;grid-template-columns:1fr 1.4fr;gap:16px}
+.edu-skills > *{min-width:0}
+.edu{background:var(--red);color:#fff;border-radius:24px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;gap:28px;position:relative;overflow:hidden}
+.edu::after{content:none;position:absolute;right:-12px;bottom:-30px;font:900 7.5rem/1 var(--display);font-stretch:125%;color:rgba(255,255,255,.08);pointer-events:none}
+.edu > *{position:relative}
+.edu small{font:500 .7rem var(--mono);letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+.edu h3{font:800 1.6rem/1.1 var(--display);margin:8px 0 6px}
+.edu p{margin:0;opacity:.85}
+.edu .gpa b{display:block;font:800 3.6rem/1 var(--display);font-variant-numeric:tabular-nums}
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.sk{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px 22px;min-width:0}
+.sk h3{font:500 .72rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+.pills{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:7px}
+.pills li{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:6px 12px;font-weight:500;font-size:.9rem}
+.sk.wide{grid-column:1/-1}
+@media (max-width:900px){.edu-skills{grid-template-columns:1fr}}
+@media (max-width:560px){.skills{grid-template-columns:1fr}}
+
+/* certificates */
+.certs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cert{margin:0;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;min-width:0;transition:transform .25s}
+.cert:hover{transform:translateY(-4px)}
+.cert button{display:block;width:100%;border:0;padding:0;cursor:zoom-in;background:#fff;aspect-ratio:16/11;overflow:hidden}
+.cert img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+.cert figcaption{padding:14px 16px 16px}
+.cert h3{font:700 .98rem/1.3 var(--display);margin:0 0 4px}
+.cert p{margin:0;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font:400 .74rem var(--mono);color:var(--muted)}
+@media (max-width:1000px){.certs{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.certs{grid-template-columns:1fr}}
+
+/* contact */
+.contact{margin-top:110px;background:var(--red);color:#fff;position:relative;overflow:hidden}
+.contact::before{content:none;position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:32px 32px;-webkit-mask-image:radial-gradient(circle at 0 0,#000,transparent 70%);mask-image:radial-gradient(circle at 0 0,#000,transparent 70%)}
+.contact .wrap{position:relative;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;padding-top:90px;padding-bottom:90px}
+.contact .wrap > *{min-width:0}
+.contact h2{font:800 clamp(2.2rem,5vw,3.6rem)/1.02 var(--display);letter-spacing:-.035em;margin:0 0 18px}
+.contact h2 span{color:#ffd2cf}
+.contact p{margin:0;opacity:.9;max-width:44ch}
+.clist{display:grid;gap:10px}
+.crow{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28);border-radius:16px;padding:15px 16px;text-decoration:none;min-width:0;transition:background .2s,transform .2s}
+a.crow:hover{background:rgba(255,255,255,.22);transform:translateX(4px)}
+.crow svg{width:20px;height:20px;flex:none}
+.crow div{flex:1;min-width:0}
+.crow small{display:block;font:500 .66rem var(--mono);letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+.crow span{display:block;font-weight:600;overflow-wrap:anywhere}
+.copy{flex:none;font:600 .74rem var(--mono);background:#fff;color:var(--red-deep);border:0;border-radius:9px;padding:7px 11px;cursor:pointer}
+@media (max-width:860px){.contact .wrap{grid-template-columns:1fr;padding-top:64px;padding-bottom:64px}}
+footer{background:var(--ink);color:rgba(255,255,255,.6)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:24px;padding-bottom:calc(24px + env(safe-area-inset-bottom,0px));font:400 .78rem var(--mono)}
+footer a{text-decoration:none;color:#fff}
+
+/* ============ DRAWER + LIGHTBOX ============ */
+.scrim{position:fixed;inset:0;background:rgba(25,23,22,.5);z-index:40;opacity:0;transition:opacity .3s;backdrop-filter:blur(2px)}
+.scrim.show{opacity:1}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(720px,100%);background:var(--paper);z-index:41;overflow-y:auto;transform:translateX(100%);transition:transform .38s cubic-bezier(.2,.8,.2,1);
+  padding:calc(24px + env(safe-area-inset-top,0px)) max(24px, env(safe-area-inset-right, 0px)) calc(48px + env(safe-area-inset-bottom,0px)) 32px}
+.drawer.show{transform:none}
+.d-close{position:sticky;top:0;margin-left:auto;display:flex;align-items:center;gap:8px;background:var(--ink);color:#fff;border:0;border-radius:999px;padding:8px 16px;font:500 .8rem var(--mono);cursor:pointer;z-index:2}
+.d-hero{margin:18px 0 22px;border-radius:18px;overflow:hidden;background:#fff;aspect-ratio:16/9;position:relative}
+.d-hero img{width:100%;height:100%;object-fit:cover;display:block}
+.d-hero.fit img{object-fit:contain;padding:12px}
+.drawer .kick{font:500 .72rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+.drawer h2{font:800 clamp(1.7rem,3.4vw,2.3rem)/1.05 var(--display);font-stretch:108%;letter-spacing:-.03em;margin:0 0 16px}
+.d-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:0 0 28px}
+.d-meta div{background:var(--card);padding:12px 14px;min-width:0}
+.d-meta dt{font:500 .64rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.d-meta dd{margin:2px 0 0;font-weight:600;font-size:.9rem}
+.d-sec{margin-bottom:26px}
+.d-sec h3{font:500 .72rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+.d-sec p{margin:0}
+.d-sec ul{margin:0;padding-left:18px}
+.d-sec li{margin-bottom:6px}
+.d-sec li::marker{color:var(--accent)}
+.d-nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.d-nums div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+.d-nums b{display:block;font:800 1.6rem/1 var(--display);font-variant-numeric:tabular-nums}
+.d-nums small{display:block;margin-top:6px;color:var(--muted);font-size:.8rem;line-height:1.35}
+.d-gal{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.d-gal figure{margin:0;min-width:0}
+.d-gal button{display:block;width:100%;border:0;padding:0;border-radius:12px;overflow:hidden;cursor:zoom-in;background:#fff;aspect-ratio:4/3}
+.d-gal img{width:100%;height:100%;object-fit:cover;display:block}
+.d-gal.fit img{object-fit:contain;padding:8px}
+.d-gal figcaption{font-size:.84rem;color:var(--muted);margin-top:6px;line-height:1.4}
+.d-gal figcaption b{display:block;color:var(--ink);font-weight:600}
+.d-link{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--accent);text-decoration:none;border-bottom:1.5px solid currentColor}
+@media (max-width:560px){.d-meta{grid-template-columns:1fr}.d-gal{grid-template-columns:1fr}.drawer{padding-left:max(18px, env(safe-area-inset-left, 0px))}}
+.lb{position:fixed;inset:0;z-index:60;background:rgba(15,13,13,.93);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  padding:calc(60px + env(safe-area-inset-top,0px)) max(16px, env(safe-area-inset-right, 0px)) calc(24px + env(safe-area-inset-bottom,0px)) max(16px, env(safe-area-inset-left, 0px))}
+.lb img{max-width:min(1200px,100%);max-height:calc(100% - 50px);object-fit:contain;border-radius:10px;background:#fff}
+.lb p{margin:0;color:#fff;font-size:.9rem;text-align:center;max-width:70ch}
+.lb button{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:max(16px, env(safe-area-inset-right, 0px));background:#fff;color:var(--ink);border:0;border-radius:999px;padding:8px 16px;font:500 .8rem var(--mono);cursor:pointer}
+</style>
+</head>
+<body>
+
+
+<nav class="topnav" id="topnav"><div class="wrap">
+  <a class="logo" href="#top">Fathan<span>.</span></a>
+  <ul class="links">
+    <li><a href="#tentang">Tentang</a></li>
+    <li><a href="#pengalaman">Pengalaman</a></li>
+    <li><a href="#proyek">Proyek</a></li>
+    <li><a href="#keahlian">Keahlian</a></li>
+    <li><a href="#sertifikat">Sertifikat</a></li>
+  </ul>
+  <a class="cta-nav" href="#kontak">Hubungi saya</a>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div class="hero-grid">
+    <div>
+      <span class="badge"><i></i>Sedang magang di PT Patona Sugureta Utama</span>
+      <h1>Halo, saya <span>Fathan Rafa Anggana</span>.</h1>
+      <p class="sub">Mahasiswa Business Information Technology di BINUS University. Saya <b>menjalankan dua bisnis</b>, berpengalaman <b>mengolah data</b>, dan senang merancang sistem yang rapi.</p>
+      <div class="btns"><a class="btn p" href="#proyek">Lihat proyek saya</a><a class="btn s" href="#kontak">Hubungi saya</a></div>
+    </div>
+    <figure class="photo">
+      <img src="img/fathan-formal.jpg" alt="Foto Fathan Rafa Anggana mengenakan jas">
+      <figcaption><small>BINUS University · Semester 5</small><b>Business Information Technology</b></figcaption>
+    </figure>
+  </div>
+  <div class="stats" aria-label="Ringkasan">
+    <div><b>3,29</b><small>IPK dari 4,00</small></div>
+    <div><b>02</b><small>Bisnis dijalankan</small></div>
+    <div><b>06</b><small>Proyek</small></div>
+    <div><b>04</b><small>Sertifikat</small></div>
+  </div>
+</div></header>
+
+<main>
+  <section id="tentang"><div class="wrap">
+    <p class="eyebrow">Tentang saya</p>
+    <div class="about">
+      <div>
+        <p class="statement">Saya <mark>menjalankan dua bisnis</mark>, pernah <mark>mengolah data</mark> di Kementerian Perdagangan, dan kini <mark>magang di bidang sistem</mark> dan administrasi.</p>
+        <p class="lead">Mahasiswa aktif Business Information Technology di BINUS University dengan pengalaman di marketing, sales, pengolahan data, dan operasional bisnis. Terbiasa mengelola usaha sendiri, mengolah data dengan Microsoft Excel dan Access, serta berkoordinasi dalam tim dengan target dan deadline.</p>
+      </div>
+      <div class="focus">
+        <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><div><h3>Data &amp; Administrasi</h3><p>Cleaning, validasi, dan pelaporan data dengan Excel, Access, dan Accurate.</p></div></div>
+        <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9h18l-1.5 11h-15Z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg></span><div><h3>Business Operations</h3><p>Mengelola stok, keuangan, tim, dan promosi dua bisnis sendiri.</p></div></div>
+        <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4"/></svg></span><div><h3>UI/UX &amp; Sistem</h3><p>Merancang aplikasi di Figma dan menganalisis kebutuhan sistem informasi.</p></div></div>
+      </div>
+    </div>
+  </div></section>
+
+  <section id="pengalaman"><div class="wrap">
+    <div class="shead"><div><p class="eyebrow">Pengalaman</p><h2 class="t">Belajar dari <em>dunia kerja</em></h2></div><p>Dari magang di perusahaan dan kementerian sampai menjalankan bisnis sendiri.</p></div>
+    <div class="now">
+      <span class="tag">Sedang berjalan</span>
+      <div><h3>System &amp; Administrative Support Intern</h3><p>PT Patona Sugureta Utama · Input dan pengelolaan data administrasi di sistem Accurate.</p></div>
+      <time>Sep – Des 2026</time>
+    </div>
+    <div class="tabs" role="tablist">
+      <button type="button" role="tab" id="tab-kerja" aria-selected="true" aria-controls="list-kerja">Kerja &amp; Bisnis</button>
+      <button type="button" role="tab" id="tab-org" aria-selected="false" aria-controls="list-org">Organisasi &amp; Kepanitiaan</button>
+    </div>
+    <ol class="jobs" id="list-kerja" role="tabpanel" aria-labelledby="tab-kerja">
+      <li class="job"><time>Sep – Des 2026<br><span class="live">Aktif</span></time><div><h3>System &amp; Administrative Support Intern</h3><p class="org">PT Patona Sugureta Utama</p><div class="chips"><i>Accurate</i><i>Administrasi</i></div></div>
+        <ul><li>Membantu penggunaan sistem Accurate untuk administrasi dan pencatatan data perusahaan.</li><li>Menginput dan mengelola data sesuai kebutuhan operasional, dengan memastikan data rapi, lengkap, dan akurat.</li></ul></li>
+      <li class="job"><time>2025 – sekarang<br><span class="live">Aktif</span></time><div><h3>Business Owner</h3><p class="org">Anggana Gaming · Rental PlayStation</p><div class="chips"><i>Operasional</i><i>Promosi</i></div></div>
+        <ul><li>Mengelola perangkat, sistem penyewaan, jadwal, dan pemeliharaan unit.</li><li>Mencatat transaksi, pemasukan, dan pengeluaran, serta menyusun strategi promosi.</li></ul></li>
+      <li class="job"><time>2024 – sekarang<br><span class="live">Aktif</span></time><div><h3>Business Owner</h3><p class="org">Anggana 61 Coffee &amp; Resto · Grand Wisata</p><div class="chips"><i>Stock control</i><i>Keuangan</i><i>Marketing</i></div></div>
+        <ul><li>Mengelola stok bahan baku, keuangan operasional, dan pembagian tugas karyawan.</li><li>Mengembangkan strategi promosi serta memantau kualitas produk dan pelayanan.</li></ul></li>
+      <li class="job"><time>Jun – Agu 2026</time><div><h3>Intern</h3><p class="org">Kementerian Perdagangan RI · Direktorat Pengembangan Pasar dan Informasi Ekspor</p><div class="chips"><i>Excel</i><i>Access</i><i>Data Cleaning</i></div></div>
+        <ul><li>Mengambil data dari Microsoft Access, lalu mengolah dan menganalisisnya di Excel untuk pelaporan unit.</li><li>Melakukan cleaning, filtering, sorting, validasi, dan penggabungan data menjadi laporan terstruktur.</li></ul></li>
+      <li class="job"><time>Agu 2025 – Agu 2026</time><div><h3>Supervisor Education Counselor</h3><p class="org">BINUS @Bekasi</p><div class="chips"><i>Leadership</i><i>Sales</i></div></div>
+        <ul><li>Mengarahkan dan mendampingi tim Education Counselor mencapai target student recruitment.</li><li>Mengoordinasikan promosi dan follow-up, lalu melaporkan evaluasi tim.</li></ul></li>
+      <li class="job"><time>Jan – Jul 2025</time><div><h3>Education Counselor</h3><p class="org">BINUS @Bekasi</p><div class="chips"><i>Komunikasi</i><i>Konsultasi</i></div></div>
+        <ul><li>Memberikan konsultasi program studi dan pendaftaran kepada calon mahasiswa dan orang tua.</li><li>Melakukan follow-up dan mendukung kegiatan promosi.</li></ul></li>
+    </ol>
+    <ol class="jobs" id="list-org" role="tabpanel" aria-labelledby="tab-org" hidden>
+      <li class="job"><time>Sep 2026</time><div><h3>Anggota KPPS</h3><p class="org">Desa Lambangsari</p><div class="chips"><i>Administrasi</i><i>Pelayanan</i></div></div>
+        <ul><li>Melaksanakan pemungutan dan penghitungan suara sesuai prosedur.</li><li>Memverifikasi dan mencatat administrasi pemilih, lalu mendokumentasikan hasil penghitungan.</li></ul></li>
+      <li class="job"><time>2023</time><div><h3>Wakil Ketua Panitia</h3><p class="org">Concentration 2023</p><div class="chips"><i>Leadership</i><i>Koordinasi</i></div></div>
+        <ul><li>Mengelola 4 divisi: External Fund, Internal Fund, Marketing, dan Consumption.</li><li>Memantau progres tiap divisi dan menyelesaikan kendala operasional.</li></ul></li>
+      <li class="job"><time>2022 – 2023</time><div><h3>Anggota Tim Redaksi</h3><p class="org">Organisasi Jurnalistik</p><div class="chips"><i>Writing</i><i>Research</i></div></div>
+        <ul><li>Riset, menulis, dan menyunting konten sebelum dipublikasikan.</li></ul></li>
+    </ol>
+  </div></section>
+
+  <section id="proyek"><div class="wrap">
+    <div class="shead stack"><div><p class="eyebrow">Proyek pilihan</p><h2 class="t">Ide jadi prototipe, <em>data jadi keputusan</em></h2></div><div class="filters" id="filters" role="group" aria-label="Filter proyek"></div></div>
+    <div class="projects" id="projects"></div>
+  </div></section>
+
+  <section id="keahlian"><div class="wrap">
+    <div class="shead"><div><p class="eyebrow">Pendidikan &amp; keahlian</p><h2 class="t">Bekal yang <em>saya bawa</em></h2></div></div>
+    <div class="edu-skills">
+      <div class="edu">
+        <div><small>Agu 2024 – sekarang · S1</small><h3>Business Information Technology</h3><p>BINUS University (Universitas Bina Nusantara)</p></div>
+        <div class="gpa"><small>IPK</small><b>3,29</b><small>dari 4,00</small></div>
+      </div>
+      <div class="skills">
+        <div class="sk"><h3>Data &amp; sistem</h3><ul class="pills"><li>Microsoft Excel</li><li>Microsoft Access</li><li>MySQL</li><li>Python</li><li>Accurate</li></ul></div>
+        <div class="sk"><h3>Desain &amp; produktivitas</h3><ul class="pills"><li>Figma</li><li>Canva</li><li>Word</li><li>PowerPoint</li><li>Google Workspace</li></ul></div>
+        <div class="sk wide"><h3>Soft skill</h3><ul class="pills"><li>Problem Solving</li><li>Leadership</li><li>Teamwork</li><li>Effective Communication</li><li>Business Perspective</li><li>Time Management</li></ul></div>
+        <div class="sk wide"><h3>Bahasa</h3><ul class="pills"><li>Indonesia</li><li>Inggris</li></ul></div>
+      </div>
+    </div>
+  </div></section>
+
+  <section id="sertifikat"><div class="wrap">
+    <div class="shead"><div><p class="eyebrow">Sertifikasi</p><h2 class="t">Terus <em>belajar</em></h2></div><p>Klik sertifikat untuk melihat ukuran penuh.</p></div>
+    <div class="certs">
+      <figure class="cert"><button type="button" data-zoom="img/cert/myskill-credit.jpg" data-cap="Credit Analysis: Financial Statement Analysis · MySkill · Sep 2026"><img src="img/cert/myskill-credit.jpg" alt="Sertifikat Credit Analysis dari MySkill" loading="lazy"></button><figcaption><h3>Credit Analysis</h3><p><span>MySkill</span><span>Sep 2026</span></p></figcaption></figure>
+      <figure class="cert"><button type="button" data-zoom="img/cert/dqlab-python.jpg" data-cap="Guide to Learn Python with AI · DQLab · Jul 2026"><img src="img/cert/dqlab-python.jpg" alt="Sertifikat Python with AI dari DQLab" loading="lazy"></button><figcaption><h3>Python with AI</h3><p><span>DQLab</span><span>Jul 2026</span></p></figcaption></figure>
+      <figure class="cert"><button type="button" data-zoom="img/cert/intro-data-analyst.jpg" data-cap="Intro to Data Analyst · Coding Studio · Jul 2025"><img src="img/cert/intro-data-analyst.jpg" alt="Sertifikat Intro to Data Analyst dari Coding Studio" loading="lazy"></button><figcaption><h3>Intro to Data Analyst</h3><p><span>Coding Studio</span><span>Jul 2025</span></p></figcaption></figure>
+      <figure class="cert"><button type="button" data-zoom="img/cert/azure-ai.jpg" data-cap="Azure AI Basic Fundamental · elevAIte – Microsoft &amp; Komdigi · Mei 2025"><img src="img/cert/azure-ai.jpg" alt="Sertifikat Azure AI Basic Fundamental" loading="lazy"></button><figcaption><h3>Azure AI Fundamental</h3><p><span>Microsoft &amp; Komdigi</span><span>Mei 2025</span></p></figcaption></figure>
+    </div>
+  </div></section>
+
+  <section id="kontak" class="contact"><div class="wrap">
+    <div><h2>Mari <span>bekerja</span> sama.</h2><p>Terbuka untuk kesempatan magang, kerja, dan kolaborasi di bidang data, sistem informasi, maupun operasional bisnis.</p></div>
+    <div class="clist">
+      <div class="crow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><div><small>Email</small><span id="email">fathan.rafa29@gmail.com</span></div><button type="button" class="copy" id="copy-email">Salin</button></div>
+      <a class="crow" href="https://wa.me/6281319135367" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 11.6A8.4 8.4 0 0 1 7.6 19L3 20l1.1-4.4A8.4 8.4 0 1 1 20 11.6Z"/></svg><div><small>WhatsApp</small><span>0813-1913-5367</span></div><span aria-hidden="true">↗</span></a>
+      <a class="crow" href="https://www.linkedin.com/in/fathan-rafa-656390288/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg><div><small>LinkedIn</small><span>Fathan Rafa</span></div><span aria-hidden="true">↗</span></a>
+    </div>
+  </div></section>
+</main>
+<footer><div class="wrap"><span>© 2026 Fathan Rafa Anggana</span><a href="#top">Kembali ke atas ↑</a></div></footer>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="d-title" hidden>
+  <button type="button" class="d-close" id="d-close">Tutup ✕</button>
+  <div id="d-body"></div>
+</aside>
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Pratinjau gambar">
+  <button type="button" id="lb-close">Tutup ✕</button>
+  <img id="lb-img" alt="">
+  <p id="lb-cap"></p>
+</div>
+
+<script>
+/* ===== Data proyek: tambahkan proyek baru di sini ===== */
+var CATS={uiux:"UI/UX",data:"Data",dev:"Web & Sistem",riset:"Riset"};
+var PROJECTS=[
+  {
+    id:"anggana61", cat:"uiux", fit:false,
+    title:"Anggana 61: Coffee Shop App",
+    meta:"UI/UX Design · Figma",
+    cover:"img/anggana-home.jpg",
+    summary:"Aplikasi mobile untuk coffee shop yang saya kelola sendiri. Pelanggan bisa memesan menu, mengumpulkan poin member, dan mendapatkan promo dari satu aplikasi.",
+    nums:[["3","Halaman utama dirancang"],["5","Menu navigasi"],["1","Bisnis nyata"]],
+    info:[["Peran","UI/UX Designer"],["Tools","Figma"],["Jenis","Proyek pribadi"]],
+    sections:[
+      ["Konteks","Anggana 61 adalah coffee shop di Grand Wisata, Bekasi, yang saya kelola sejak 2024. Aplikasi ini dirancang supaya pelanggan bisa memesan, mengumpulkan poin member, dan melihat promo dari satu tempat."],
+      ["Yang dirancang",["Login dengan nomor HP atau email, plus akses cepat lewat Google dan Apple.","Beranda dengan kartu member, poin, progres level (Gold Member), banner promo, Quick Menu, dan rekomendasi.","Halaman menu dengan pencarian, filter kategori, rating, harga, dan tombol favorit.","Navigasi bawah: Home, Order, Voucher, History, dan Profile."]],
+      ["Pendekatan desain","Palet krem, cokelat tua, dan aksen emas untuk suasana hangat khas kedai kopi, dipadukan dengan tipografi monospace yang memberi karakter modern."]
+    ],
+    gallery:[["img/anggana-home.jpg","Beranda","Kartu member, poin, promo, dan rekomendasi menu."],["img/anggana-login.jpg","Login","Nomor HP atau email, serta Google dan Apple."],["img/anggana-menu.jpg","Menu","Pencarian, filter kategori, dan favorit."]]
+  },
+  {
+    id:"hotel", cat:"data", fit:true,
+    title:"Hotel Booking System: Data Cleaning & Dashboard",
+    meta:"Data Analysis · Excel · Proyek kelompok",
+    cover:"img/hotel/6-dashboard.png",
+    summary:"Mengolah data reservasi hotel dari lima tabel yang tidak konsisten menjadi data yang rapi, terhubung, dan siap dianalisis lewat dashboard interaktif.",
+    nums:[["240","Booking dianalisis"],["5","Tabel dibersihkan"],["67","Booking batal"]],
+    info:[["Tools","Excel · Power Pivot"],["Tim","Kelompok 5 (3 orang)"],["Periode","Genap 2025/2026"]],
+    sections:[
+      ["Pertanyaan bisnis","Bagaimana data reservasi yang penulisannya tidak seragam bisa dipakai manajemen hotel untuk memantau pendapatan, pembatalan, dan metode pembayaran?"],
+      ["Yang dikerjakan",["Menyeragamkan teks dan format tanggal di 5 tabel (Bookings, Guests, Rooms, Payments, GuestServices) dengan TRIM, PROPER, IF, IFERROR, VLOOKUP, dan INDEX-MATCH.","Menghubungkan tabel dalam Power Pivot Data Model, dengan measure DAX Total Revenue dan Average Payment, serta CUBEVALUE untuk dashboard.","Membuat simulasi What-If pendapatan berdasarkan tingkat okupansi.","Menyusun chart dan dashboard interaktif dengan Conditional Formatting dan format Rupiah."]],
+      ["Temuan","NUMS"]
+    ],
+    findings:[["89","Booking Confirmed dari 240"],["67","Booking Cancelled"],["30%","Pembayaran via Bank Transfer"],["Rp 631,7 jt","Potensi pendapatan pada okupansi 100%"]],
+    gallery:[["img/hotel/6-dashboard.png","Dashboard","Ringkasan pendapatan, booking, dan pembayaran."],["img/hotel/1-data-cleaning.png","Data cleaning","Status diseragamkan dan diberi warna otomatis."],["img/hotel/2-data-model.png","Data model","Lima tabel terhubung di Power Pivot."],["img/hotel/3-booking-status.png","Status booking","89 Confirmed, 67 Cancelled, 32 No Show."],["img/hotel/4-metode-pembayaran.png","Metode pembayaran","Bank Transfer 30%, Cash 23%."],["img/hotel/5-what-if.png","What-If Analysis","Pendapatan pada okupansi 50–100%."]]
+  },
+  {
+    id:"sekolahkutahu", cat:"dev", fit:true,
+    title:"SekolahKuTahu: Monitoring Kualitas Pendidikan",
+    meta:"Web App · PHP, MySQL, Tailwind · SDG 4",
+    cover:"img/sdg4/1-dashboard.jpg",
+    summary:"Aplikasi web tempat sekolah mengisi data fasilitas dan siswa memberi feedback langsung. Dashboard admin menilai kualitas sekolah secara otomatis dari suara siswa.",
+    nums:[["2","Peran pengguna: siswa & sekolah"],["3","Status kualitas otomatis"],["SDG 4","Quality Education"]],
+    info:[["Tools","PHP · MySQL · Tailwind · Chart.js"],["Mata kuliah","Programming for Business"],["Tim","6 orang · 2025"]],
+    sections:[
+      ["Masalah","Kualitas sekolah di Indonesia masih timpang, dan evaluasinya jarang melibatkan siswa sebagai penerima layanan utama. Akibatnya, perbaikan berjalan lambat."],
+      ["Fitur yang dibangun",["Login dan registrasi dengan dua peran (siswa dan admin sekolah) berbasis session.","Halaman Suara Siswa: survei pemahaman materi, penilaian fasilitas kelas, dan kotak aspirasi.","Dashboard admin dengan grafik Chart.js dan status kualitas otomatis: BAIK, CUKUP, atau PERLU PERBAIKAN.","Pengelolaan profil sekolah dan penilaian mandiri fasilitas (skor 1–5)."]],
+      ["Tantangan & pembelajaran",["Merancang relasi tabel users, data sekolah, dan feedback agar data tiap sekolah tidak tercampur.","Membatasi akses halaman per peran dan mengamankan input dengan escaping.","Menghubungkan data MySQL ke grafik JavaScript secara dinamis."]]
+    ],
+    gallery:[["img/sdg4/1-dashboard.jpg","Dashboard admin","Grafik pemahaman materi, kepuasan fasilitas, dan aspirasi terbaru."],["img/sdg4/2-suara-siswa.jpg","Suara Siswa","Survei mingguan dan kotak saran."],["img/sdg4/5-panel-admin.jpg","Panel admin","Update data sekolah dan skor fasilitas."],["img/sdg4/3-login.jpg","Login","Masuk sebagai siswa atau sekolah."],["img/sdg4/4-daftar.jpg","Daftar akun","Registrasi siswa dengan pilihan asal sekolah."],["img/sdg4/6-erd.jpg","ERD","Relasi tabel sekolah, anak, dan feedback."]]
+  },
+  {
+    id:"copyin", cat:"dev", fit:false,
+    title:"Copyin: Analisis & Desain Sistem Informasi",
+    meta:"System Analysis & Design · Draw.io, Figma",
+    cover:"img/copyin/1-pemesanan-atk.jpg",
+    summary:"Merancang sistem aplikasi pemesanan fotokopi, printing, dan ATK untuk mahasiswa, mulai dari analisis akar masalah sampai prototipe aplikasi dan dashboard admin.",
+    nums:[["8","Use case dirancang"],["7","Jenis diagram"],["3-Tier","Arsitektur sistem"]],
+    info:[["Tools","Draw.io · Figma"],["Tim","Kelompok 11 (4 orang)"],["Periode","Ganjil 2025/2026"]],
+    sections:[
+      ["Konteks","Copyin ditujukan untuk mahasiswa dan pekerja yang mobile: unggah dokumen, pilih layanan cetak atau ATK dari HP, lalu bayar otomatis dengan batas waktu 1 jam. Ada juga rekomendasi berbasis AI dari survei preferensi pengguna."],
+      ["Yang dikerjakan",["Analisis akar masalah dengan Fishbone Diagram.","Context Diagram dan Data Flow Diagram untuk setiap proses.","Use Case Diagram beserta deskripsi 8 use case, dari registrasi sampai laporan penjualan.","Class, Sequence, State Transition, dan Activity Diagram.","Prototipe Figma untuk pengguna dan admin, termasuk laporan penjualan per bulan."]],
+      ["Keputusan desain","Arsitektur Client/Server 3-tier dipilih supaya aplikasi tetap ringan di HP dengan spesifikasi beragam, data dokumen pribadi tersimpan aman di server, dan perubahan harga atau logika rekomendasi cukup diperbarui di server."]
+    ],
+    link:["Lihat prototipe di Figma","https://www.figma.com/design/YGATLYssEn5kvzcXvOi5Cn/BB80_11_FinalProject?node-id=0-1"],
+    gallery:[["img/copyin/1-pemesanan-atk.jpg","Pemesanan ATK","Beranda, rekomendasi, toko, dan detail produk."],["img/copyin/2-registrasi-survei.jpg","Registrasi & survei","Data diri dan survei preferensi untuk AI."],["img/copyin/3-printing.jpg","Printing","Pilih toko, jenis cetak, unggah file, bayar."],["img/copyin/4-laporan-admin.jpg","Laporan admin","Grafik penjualan cetak dan ATK per bulan."],["img/copyin/5-context-diagram.jpg","Context Diagram","Alur data antara Copyers, sistem, dan admin toko."],["img/copyin/6-fishbone.jpg","Fishbone Diagram","Analisis akar masalah layanan fotokopi."]]
+  },
+  {
+    id:"kota", cat:"riset",
+    type:{big:"67%",small:"warga tidak memilah sampah",tone:"red"},
+    title:"Kota Berkelanjutan: Sampah & Ruang Hijau",
+    meta:"Artikel Ilmiah · Survei 75 responden · SDG 11",
+    summary:"Penelitian tentang pengelolaan sampah dan ruang hijau di sekitar BINUS @Bekasi lewat observasi, wawancara pengelola bank sampah, dan survei 75 responden.",
+    nums:[["75","Responden survei"],["67%","Tidak memilah sampah"],["88%","Setuju kampus zero-waste"]],
+    info:[["Peran","Penulis pertama"],["Metode","Observasi · wawancara · survei"],["Tim","5 penulis"]],
+    sections:[
+      ["Pertanyaan","Apa saja tantangan pengelolaan sampah dan ruang hijau di perkotaan, dan solusi berbasis masyarakat apa yang bisa diterapkan?"],
+      ["Temuan","NUMS"],
+      ["Rekomendasi",["Edukasi lingkungan berbasis komunitas dan kampanye kreatif lewat media sosial.","Insentif dari pemerintah untuk program pengelolaan sampah.","Peran aktif kampus dan generasi muda dalam gaya hidup berkelanjutan."]]
+    ],
+    findings:[["67%","Tidak memilah sampah di rumah"],["52%","Jarang mengunjungi ruang hijau"],["72%","Memilih media sosial untuk edukasi"],["64%","Mau ikut program komunitas"]],
+    gallery:[]
+  },
+  {
+    id:"agama", cat:"riset",
+    type:{big:"SDG 16",small:"Mediasi · Moderasi · Era digital"},
+    title:"Institusi Keagamaan dan Kerukunan di Indonesia",
+    meta:"Artikel Ilmiah · Kualitatif · SDG 16",
+    summary:"Penelitian kualitatif lewat wawancara dan kuesioner tentang peran NU, Muhammadiyah, dan Kementerian Agama dalam menjaga kerukunan antarumat beragama.",
+    nums:[["3","Tema utama ditemukan"],["7","Penulis"],["SDG 16","Perdamaian & institusi"]],
+    info:[["Peran","Menyusun kajian teori"],["Metode","Wawancara · kuesioner · analisis tematik"],["Tim","7 mahasiswa"]],
+    sections:[
+      ["Pertanyaan","Bagaimana masyarakat memandang kontribusi institusi keagamaan dalam menjaga kerukunan dan kedamaian di Indonesia?"],
+      ["Temuan",["Mediasi: institusi keagamaan dipercaya sebagai penengah konflik dan otoritas moral.","Edukasi: moderasi beragama dan aksi nyata seperti bakti sosial dan dialog lintas iman.","Tantangan: hoaks, provokasi di media sosial, fanatisme, dan politisasi agama."]],
+      ["Rekomendasi","Meningkatkan literasi digital berbasis nilai keagamaan yang moderat dan memperluas kerja sama antarinstitusi untuk memperkuat ketahanan sosial."]
+    ],
+    gallery:[]
+  }
+];
+
+(function(){
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+  var wrap=document.getElementById('projects'),filters=document.getElementById('filters');
+  function cover(p){return p.type?'<div class="tcover'+(p.type.tone==='red'?' red':'')+'"><b>'+esc(p.type.big)+'</b><small>'+esc(p.type.small)+'</small></div>':'<img src="'+p.cover+'" alt="" loading="lazy">';}
+
+  /* filters (only categories that have projects) */
+  var counts={};PROJECTS.forEach(function(p){counts[p.cat]=(counts[p.cat]||0)+1;});
+  var fhtml='<button type="button" data-f="all" aria-pressed="true">Semua<small>'+PROJECTS.length+'</small></button>';
+  Object.keys(CATS).forEach(function(k){if(counts[k])fhtml+='<button type="button" data-f="'+k+'" aria-pressed="false">'+CATS[k]+'<small>'+counts[k]+'</small></button>';});
+  filters.innerHTML=fhtml;
+
+  function render(f){
+    wrap.innerHTML=PROJECTS.filter(function(p){return f==='all'||p.cat===f;}).map(function(p){
+      return '<article class="pcard"><div class="pimg'+(p.fit?' fit':'')+'">'+cover(p).replace(' loading="lazy"','')+'<span class="cat">'+CATS[p.cat]+'</span></div>'+
+        '<div class="pbody"><p class="meta">'+esc(p.meta)+'</p><h3>'+esc(p.title)+'</h3><p>'+esc(p.summary)+'</p>'+
+        '<div class="nums">'+p.nums.map(function(n){return '<div><b>'+esc(n[0])+'</b><small>'+esc(n[1])+'</small></div>';}).join('')+'</div>'+
+        '<button type="button" class="open" data-open="'+p.id+'">Lihat studi kasus <span>→</span></button></div></article>';
+    }).join('');
+  }
+  render('all');
+  filters.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
+    filters.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});render(b.dataset.f);});
+
+  /* drawer */
+  var drawer=document.getElementById('drawer'),scrim=document.getElementById('scrim'),body=document.getElementById('d-body'),lastOpen=null;
+  function openDrawer(id,trigger){
+    var p=PROJECTS.find(function(x){return x.id===id;});if(!p)return;lastOpen=trigger;
+    var h='<div class="d-hero'+(p.fit?' fit':'')+'">'+cover(p)+'</div><p class="kick">'+esc(p.meta)+'</p><h2 id="d-title">'+esc(p.title)+'</h2>'+
+      '<dl class="d-meta">'+p.info.map(function(i){return '<div><dt>'+esc(i[0])+'</dt><dd>'+esc(i[1])+'</dd></div>';}).join('')+'</dl>';
+    p.sections.forEach(function(s){
+      h+='<div class="d-sec"><h3>'+esc(s[0])+'</h3>';
+      if(s[1]==='NUMS')h+='<div class="d-nums">'+p.findings.map(function(n){return '<div><b>'+esc(n[0])+'</b><small>'+esc(n[1])+'</small></div>';}).join('')+'</div>';
+      else if(Array.isArray(s[1]))h+='<ul>'+s[1].map(function(li){return '<li>'+esc(li)+'</li>';}).join('')+'</ul>';
+      else h+='<p>'+esc(s[1])+'</p>';
+      h+='</div>';
+    });
+    if(p.link)h+='<div class="d-sec"><a class="d-link" href="'+p.link[1]+'" target="_blank" rel="noopener">'+esc(p.link[0])+' ↗</a></div>';
+    if(p.gallery.length)h+='<div class="d-sec"><h3>Galeri</h3><div class="d-gal'+(p.fit?' fit':'')+'">'+p.gallery.map(function(g){
+      return '<figure><button type="button" data-zoom="'+g[0]+'" data-cap="'+esc(g[1]+': '+g[2])+'"><img src="'+g[0]+'" alt="'+esc(g[1])+'" loading="lazy"></button><figcaption><b>'+esc(g[1])+'</b>'+esc(g[2])+'</figcaption></figure>';
+    }).join('')+'</div></div>';
+    body.innerHTML=h;drawer.scrollTop=0;
+    drawer.hidden=false;scrim.hidden=false;document.body.style.overflow='hidden';
+    requestAnimationFrame(function(){drawer.classList.add('show');scrim.classList.add('show');});
+    document.getElementById('d-close').focus();
+  }
+  function closeDrawer(){
+    drawer.classList.remove('show');scrim.classList.remove('show');document.body.style.overflow='';
+    setTimeout(function(){drawer.hidden=true;scrim.hidden=true;},350);if(lastOpen)lastOpen.focus();
+  }
+  wrap.addEventListener('click',function(e){var b=e.target.closest('[data-open]');if(b)openDrawer(b.dataset.open,b);});
+  wrap.addEventListener('click',function(e){if(e.target.closest('.pimg')){var c=e.target.closest('.pcard').querySelector('[data-open]');openDrawer(c.dataset.open,c);}});
+  document.getElementById('d-close').addEventListener('click',closeDrawer);
+  scrim.addEventListener('click',closeDrawer);
+
+  /* lightbox */
+  var lb=document.getElementById('lb'),lbImg=document.getElementById('lb-img'),lbCap=document.getElementById('lb-cap'),lbClose=document.getElementById('lb-close'),lastZoom=null;
+  document.addEventListener('click',function(e){var b=e.target.closest('[data-zoom]');if(!b)return;lastZoom=b;
+    lbImg.src=b.dataset.zoom;lbImg.alt=(b.querySelector('img')||{}).alt||'';lbCap.textContent=b.dataset.cap||'';lb.hidden=false;document.body.style.overflow='hidden';lbClose.focus();});
+  function closeLb(){lb.hidden=true;if(drawer.hidden)document.body.style.overflow='';if(lastZoom)lastZoom.focus();}
+  lbClose.addEventListener('click',closeLb);lb.addEventListener('click',function(e){if(e.target===lb)closeLb();});
+  document.addEventListener('keydown',function(e){if(e.key!=='Escape')return;if(!lb.hidden)closeLb();else if(!drawer.hidden)closeDrawer();});
+
+  /* experience tabs */
+  var tk=document.getElementById('tab-kerja'),to=document.getElementById('tab-org'),lk=document.getElementById('list-kerja'),lo=document.getElementById('list-org');
+  function tab(k){tk.setAttribute('aria-selected',k);to.setAttribute('aria-selected',!k);lk.hidden=!k;lo.hidden=k;}
+  tk.addEventListener('click',function(){tab(true);});to.addEventListener('click',function(){tab(false);});
+
+  /* scroll-aware nav + solid header after hero */
+  var nav=document.getElementById('topnav'),hero=document.getElementById('top');
+  var links=[].slice.call(document.querySelectorAll('.links a'));
+  var secs=['tentang','pengalaman','proyek','keahlian','sertifikat','kontak'].map(function(id){return document.getElementById(id);});
+  function spy(){
+    nav.classList.toggle('solid',window.scrollY>8);
+    var y=window.innerHeight*0.35,cur='';
+    secs.forEach(function(s){if(s&&s.getBoundingClientRect().top<=y)cur=s.id;});
+    links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+cur);});
+  }
+  window.addEventListener('scroll',spy,{passive:true});window.addEventListener('resize',spy);spy();
+
+  /* copy email */
+  var cb=document.getElementById('copy-email'),em=document.getElementById('email');
+  cb.addEventListener('click',function(){
+    function done(){cb.textContent='Tersalin';setTimeout(function(){cb.textContent='Salin';},1600);}
+    function sel(){var r=document.createRange();r.selectNodeContents(em);var s=getSelection();s.removeAllRanges();s.addRange(r);}
+    try{navigator.clipboard.writeText(em.textContent).then(done,sel);}catch(err){sel();}
+  });
+})();
+</script>
+
+</body>
+</html>
